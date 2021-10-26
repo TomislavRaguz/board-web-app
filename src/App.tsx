@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router';
-import { useSelector } from 'react-redux';
 
 import { Navbar } from './components/Navbar';
 import { LoadingOverlay, loadingOverlayRef } from './components/LoadingOverlay';
@@ -20,7 +19,6 @@ import { BoardForm } from './pages/BoardForm';
 
 function App() {
   const [initialized, setInitialized] = useState(false)
-  //const isInitialized = useSelector(state => state.app.isInitialized);
   const dispatch = useAppDispatch();
   async function initializeApp() {
     await dispatch(initialize()).unwrap()

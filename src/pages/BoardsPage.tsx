@@ -1,10 +1,6 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { useBoardsQuery } from '../redux/slices/api';
-import { Link } from 'react-router-dom';
-//import { boardsSelectors, getBoards } from '../redux/adapters/boardSlice';
-import { useSelector } from 'react-redux';
-import { reduxStore } from '../redux/store';
 
 export function BoardsPage() {
   const { data: boards, isLoading, error } = useBoardsQuery()

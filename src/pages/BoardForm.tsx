@@ -6,14 +6,6 @@ import { showLoadingOverlay } from "../components/LoadingOverlay";
 import { useCreateBoardMutation } from "../redux/slices/api";
 import { useAppDispatch } from "../redux/store";
 
-/*
-title: string(),
-publicRead: boolean(),
-publicWrite: boolean(),
-adminAccessUsers: optional(array(sStructID("User"))),
-readAccessUsers: optional(array(sStructID("User"))),
-columns: optional(array(sStructID("Column")))
-*/
 export function BoardForm () {
   const [ createBoard, { isLoading } ] = useCreateBoardMutation()
   const { register, handleSubmit } = useForm();

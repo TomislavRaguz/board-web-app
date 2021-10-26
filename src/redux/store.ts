@@ -24,7 +24,7 @@ const userChangeDetectionMiddleware = (store:any) => (next:any) => (action:any) 
 const rootReducer = (state: any, action: any) => {
   if (action.type === "auth/userChange") {
     /*
-    TODO: reset RTK query cache, could also do it in a middleware on user change because 
+    resets RTK query cache, could also do it in a middleware on user change because 
     what if a user is logged in and another one logs in
     */
     console.log('purging user data')

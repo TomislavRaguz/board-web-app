@@ -15,14 +15,13 @@ function LoggedInHomePage(props: { user: IUser }) {
       <p>Home</p>
       <p>email: {props.user.email}</p>
       <Link to='/boards/new'>
-        <p>Nova ploca</p>
+        <p>New board</p>
       </Link>
       <Link to='/boards'>
-        <p>Javne ploce</p>
+        <p>Public boards</p>
       </Link>
-      <p>Moje ploce</p>
-      <p>Moje kolumne</p>
-      <p>Moji pozivi</p>
+      <p>My boards</p>
+      <p>My columns</p>
     </Container>
   )
 }
