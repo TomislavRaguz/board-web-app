@@ -6,16 +6,17 @@ import { useForm } from "react-hook-form";
 import { IColumn, useUpdateColumnMutation } from "../../redux/slices/api";
 
 export function AddCard (props: { column: IColumn }) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [ updateColumn, { isLoading } ] = useUpdateColumnMutation();
   const [displayForm, setDisplayForm] = useState(false)
   if(displayForm) {
     const onSubmit = async (formData: { content: string }) => {
-      const nextRows = [...props.column.rows, formData]
+      const nextRows = [...props.column.rows.map(({ _id, content })=> ({ _id, content })), formData]
       try {
         await updateColumn({ _id: props.column._id, patchStrategies: {
           setRows: { rows: nextRows }
         }})
+        reset()
         setDisplayForm(false)
       } catch(e) {
         console.log(e)

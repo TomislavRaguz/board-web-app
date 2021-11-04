@@ -77,7 +77,7 @@ export function Column(props: {
       >
         <Droppable droppableId={column._id}>
           {provided => (
-            <div {...provided.droppableProps} ref={provided.innerRef}>
+            <div css={{ minHeight: 22 }} {...provided.droppableProps} ref={provided.innerRef}>
               {column.rows.map((row, i) => (
                 <Draggable key={row._id} draggableId={row._id} index={i}>
                   {provided => (

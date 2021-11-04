@@ -76,7 +76,7 @@ export const apiSlice = createApi({
       providesTags: result => result ? [{ type: "Board", id: result._id }] : []
     }),
     updateColumn: builder.mutation<IColumn, { _id: string, patchStrategies: {
-      setRows?: { rows: Array<{ content: string }> } 
+      setRows?: { rows: Array<{ content: string, _id?: string }> } 
     } }>({
       query: params => {
         return {
